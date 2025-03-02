@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Site blocking extenstion",
+    "version": "1.0",
+    "description": "Block distracting websites",
+    "permissions": [
+        "storage",
+        "webRequest",
+        "declarativeNetRequest",
+        "activeTab"
+    ],
+    "action": {
+      "default_popup": "src/content/popup.html",
+      "default_icon": {
+        "48": "src/images/icon48.png",
+        "128": "src/images/icon128.png"
+      }
+    },
+    "icons": {
+      "48": "src/images/icon48.png",
+      "128": "src/images/icon128.png"
+    },
+    "content_scripts": [
+      {
+        "js": ["src/scripts/script.js"],
+        "matches": ["<all_urls>"]
+      }
+    ],
+    "background": {
+      "service_worker": "src/background.js",
+      "type": "module"
+    }
+  }
