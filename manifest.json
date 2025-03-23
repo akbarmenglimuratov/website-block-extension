@@ -1,14 +1,15 @@
 {
     "manifest_version": 3,
-    "name": "Site blocking extenstion",
+    "name": "Website blocking extension",
     "version": "1.0",
     "description": "Block distracting websites",
     "permissions": [
         "storage",
-        "webRequest",
         "declarativeNetRequest",
-        "activeTab"
+        "activeTab",
+        "declarativeNetRequestWithHostAccess"
     ],
+    "host_permissions": ["<all_urls>"],
     "action": {
       "default_popup": "src/content/popup.html",
       "default_icon": {
@@ -22,7 +23,7 @@
     },
     "content_scripts": [
       {
-        "js": ["src/scripts/script.js"],
+        "js": ["src/scripts/content.js"],
         "matches": ["<all_urls>"]
       }
     ],

@@ -1,9 +1,16 @@
 body {
-    width: 250px;
-    height: 250px;
+    font-family: sans-serif;
 }
 
 .main {
-    width: 250px;
+    width: 500px;
     height: 250px;
+}
+
+div.title-container {
+    text-align: center;
+}
+.title {
+    font-size: 20pt;
+    text-align: center;
 }
